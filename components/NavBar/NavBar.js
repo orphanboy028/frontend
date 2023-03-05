@@ -6,10 +6,12 @@ import NavSearch from "./NavSearch";
 import Link from "next/link";
 import avtar from "../../public/user.png";
 import downArrow from "../../public/down-arrow.png";
+import MNavBar from "./mobileView/MNavBar";
 
 export default function NavBar() {
   return (
     <>
+      {/* deskstop view start */}
       <nav className={style.top_navBar}>
         <div className={style.nav_side_gap}></div>
         {/* navbar center part start */}
@@ -41,6 +43,13 @@ export default function NavBar() {
         {/* navbar center part End */}
         <div className={style.nav_side_gap}></div>
       </nav>
+      {/* deskstop view End */}
+
+      {/* Mobile view NavBar start */}
+      <div className={style.mobile_mode_top_navbar}>
+        <MNavBar />
+      </div>
+      {/* Mobile view NavBar start */}
     </>
   );
 }

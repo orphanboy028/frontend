@@ -93,3 +93,84 @@
   align-items: center;
   padding: 2px;
 }
+
+/* Mobile View */
+
+.mobile_mode_top_navbar {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .top_navBar {
+    display: none;
+  }
+  .mobile_mode_top_navbar {
+    display: block;
+    background-color: #2874f0;
+    width: 100%;
+    min-height: 130px;
+    margin-bottom: 10px;
+  }
+
+  .mobile_top_navBar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobile_topNav_left {
+    width: 30%;
+    display: flex;
+    padding: 5px 0px;
+  }
+
+  .mobile_burger {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile_logo {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile_topNav_right {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobile_topNav_right_box_child {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile_search_box {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin-top: 5px;
+  }
+
+  .mobile_categories_container {
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    justify-content: center;
+  }
+  .mobile_categories_box {
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mobile_categories_image {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #fff;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+}

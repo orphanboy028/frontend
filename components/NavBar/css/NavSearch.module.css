@@ -29,3 +29,21 @@
   padding: 10px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+  .search_container {
+    width: 85%;
+    height: 30px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 23%);
+  }
+  .search_form {
+    width: 100%;
+  }
+  .search_input {
+    width: 100%;
+  }
+  .search_icon_box {
+    width: 10%;
+    height: 30px;
+  }
+}
