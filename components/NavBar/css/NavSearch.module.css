@@ -1,0 +1,31 @@
+.search_container {
+  display: flex;
+  width: 100%;
+  border: 1px solid #fff;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 23%);
+  padding: 2px;
+  height: 36px;
+}
+
+.search_form {
+  width: 100%;
+}
+
+.search_input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 14px;
+  color: #212121;
+}
+
+.search_icon_box {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a56db;
+  padding: 10px;
+  cursor: pointer;
+}

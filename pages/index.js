@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import style from "../styles/Home.module.css";
 import { Alert } from "flowbite-react";
+import NavBar from "../components/NavBar/NavBar";
 
 export default function Home() {
   const [hydrated, setHydrated] = useState(false);
@@ -23,7 +24,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <h1>Hello Next js</h1>
+        <NavBar />
       </div>
     </>
   );
