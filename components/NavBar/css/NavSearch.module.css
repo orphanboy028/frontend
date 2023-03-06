@@ -1,9 +1,9 @@
 .search_container {
   display: flex;
   width: 100%;
-  border: 1px solid #fff;
-  background: #fff;
-  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 23%);
+  border: 1px solid var(--color-white);
+  background: var(--color-white);
+  box-shadow: var(--box-shadow);
   padding: 2px;
   height: 36px;
 }
@@ -17,7 +17,7 @@
   height: 100%;
   outline: none;
   font-size: 14px;
-  color: #212121;
+  color: var(--color-black);
 }
 
 .search_icon_box {
@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1a56db;
+  background-color: var(--color-brand-blue);
   padding: 10px;
   cursor: pointer;
 }
@@ -34,7 +34,7 @@
   .search_container {
     width: 85%;
     height: 30px;
-    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 23%);
+    box-shadow: var(--box-shadow);
   }
   .search_form {
     width: 100%;

@@ -5,4 +5,8 @@
 :root {
   --color-brand-blue: #2874f0;
   --color-white: #f0f0f0;
+  --color-black: #000000;
+  --box-shadow: 0 2px 4px 0 rgb(0 0 0 / 23%);
+  --categorie-cover-bg-color: rgb(15, 125, 216);
+  --border-color: #ebebeb;
 }

@@ -6,6 +6,7 @@ import { Alert } from "flowbite-react";
 import NavBar from "../components/NavBar/NavBar";
 import CategoriesBar from "../components/categoriesHomeBar/CategoriesBar";
 import HomePageSlider from "../components/HomepageSlider/HomePageSlider";
+import CategoriseCardsBar from "../components/HomePageCategoriesShow/Dekstop/CategoriseCardsBar";
 
 export default function Home() {
   const [hydrated, setHydrated] = useState(false);
@@ -29,6 +30,9 @@ export default function Home() {
         <NavBar />
         <CategoriesBar />
         <HomePageSlider />
+        <CategoriseCardsBar />
+        <CategoriseCardsBar />
+        <CategoriseCardsBar />
       </div>
     </>
   );
