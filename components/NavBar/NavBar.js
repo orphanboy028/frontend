@@ -27,7 +27,9 @@ export default function NavBar() {
               Get Price{" "}
             </Link>
           </div>
-          <div className={style.Login_btn_box}>Became a seller</div>
+          <div className={style.Login_btn_box}>
+            <Link href={"/products"}>Became a seller</Link>
+          </div>
           <div className={style.user_box}>
             <div className={style.userIMage}>
               <Image src={avtar} width={25} />

@@ -1,0 +1,61 @@
+.LocationBar_conatiner {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  min-height: 50px;
+  margin: 30px 20px;
+  display: flex;
+}
+
+.LocationBar_dynimic_loacation_conatiner {
+  width: 30%;
+  display: flex;
+  border-right: 2px solid #eee;
+}
+
+.LocationBar_dynimic_Icon_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+}
+
+.LocationBar_search_location_box {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  padding: 5px;
+}
+
+.LocationBar_search_location_box input {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.LocationBar_dynimic_location_detect_box {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LocationBar_City_location_conatiner {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  margin: 0px 10px;
+}
+
+.LocationBar_dynimic_location_detect_icon {
+  width: 30%;
+}
+
+.LocationBar_City_location_Box {
+  padding: 0px 20px;
+}
+
+.LocationBar_City_location_Box h4 {
+  font-weight: 500;
+  cursor: pointer;
+}

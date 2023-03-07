@@ -6,17 +6,47 @@ import Image from "next/image";
 import userAvtar from "../../public/user-avatar.png";
 import EditIcon from "../../public/edit.png";
 import homeIcon from "../../public/Mobile-Drawer-menu-Icons/home.png";
+import Link from "next/link";
 
 const menuName = [
-  "Home",
-  "Important Supplies",
-  "View All Categories",
-  "Post Your Requirement",
-  "Message",
-  "Pay with Us",
-  "My Order",
-  "Your Favorities",
-  "Ship with Us",
+  {
+    name: "Home",
+    slug: "/",
+  },
+
+  {
+    name: "view Produtcs",
+    slug: "/products",
+  },
+
+  {
+    name: "Important Supplies",
+    slug: "/",
+  },
+
+  {
+    name: "View All Categories",
+    slug: "/",
+  },
+  {
+    name: "Post Your Requirement",
+    slug: "/",
+  },
+
+  {
+    name: "Pay with Us",
+    slug: "/",
+  },
+
+  {
+    name: "My Order",
+    slug: "/",
+  },
+
+  {
+    name: "Your Favorities",
+    slug: "/",
+  },
 ];
 
 export default function MobileDrawer() {
@@ -36,7 +66,9 @@ export default function MobileDrawer() {
               <Image src={homeIcon} alt="menue-home-icon" width={20} />
             </div>
             <div className={style.MobileDrawer_menu_box_contentBox}>
-              <p>{el} </p>
+              <Link href={el.slug}>
+                <p>{el.name} </p>
+              </Link>
             </div>
           </div>
         </>

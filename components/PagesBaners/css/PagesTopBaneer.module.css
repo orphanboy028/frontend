@@ -1,0 +1,10 @@
+.PagesTopBaneer_container {
+  margin-top: 50px;
+  width: 100%;
+  height: 113px;
+  border: 1px solid #eee;
+  background-image: url("../../../public/pages-baners-image/page_banner_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
