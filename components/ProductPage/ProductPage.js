@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./css/ProductPage.module.css";
 import ProductCards from "./ProductCards";
+import ProductsExtraElements from "./ProductsExtraElements";
 import RelatedCategories from "./RelatedCategories";
 
 export default function ProductPage() {
@@ -16,7 +17,7 @@ export default function ProductPage() {
         </div>
 
         <div className={style.ProductPage_extra_elements_container}>
-          Extra element
+          <ProductsExtraElements />
         </div>
       </div>
     </>

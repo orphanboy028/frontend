@@ -17,6 +17,8 @@
 
 .ProductPage_extra_elements_container {
   width: 20%;
+  padding: 10px;
+  border: 1px sold #eee;
 }
 
 /* realted categories */
@@ -123,5 +125,14 @@
 }
 
 .ProductCards_conatactBtn__box span {
+  padding: 5px;
+}
+
+.ProductsExtraElements_container {
+  border: 1px solid #eee;
+  width: 100%;
+  min-height: 200px;
+  box-shadow: var(shadow);
+  cursor: pointer;
   padding: 5px;
 }
