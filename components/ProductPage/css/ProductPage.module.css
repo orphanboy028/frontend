@@ -10,14 +10,13 @@
 }
 
 .ProductPage_Products_card_conatiner {
-  width: 50%;
-  border: 1px solid red;
+  width: 60%;
+  border: 1px solid #eee;
   padding: 10px;
 }
 
 .ProductPage_extra_elements_container {
   width: 20%;
-  border: 1px solid red;
 }
 
 /* realted categories */
@@ -50,4 +49,79 @@
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
+}
+
+/* Product Cards */
+
+.ProductCards_container {
+  display: flex;
+  margin: 5px 0px 20px 0px;
+}
+
+.ProductCards_imageBox {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.ProductCards_contentBox {
+  padding: 10px;
+  width: 50%;
+}
+
+.ProductCards_title h2 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.ProductCards_priceBox h2 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.ProductCards_supplyer_detailsBox {
+  width: 20%;
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+.ProductCards_userType {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ProductCards_companyName {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.ProductCards_companyName p {
+  font-size: 14px;
+}
+
+.ProductCards_sort_descreption {
+  margin-bottom: 35px;
+}
+
+.ProductCards_conatactBtn__box {
+  margin-top: 55px;
+  display: inline;
+  background-color: #339d3a;
+  border: 1px solid#027c0a;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px 20px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProductCards_conatactBtn__box span {
+  padding: 5px;
 }
