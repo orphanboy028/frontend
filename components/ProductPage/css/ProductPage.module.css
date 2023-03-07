@@ -1,0 +1,53 @@
+.ProductPage_container {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.ProductPage_sideBar_realated_Conatiner {
+  width: 20%;
+  padding: 10px;
+}
+
+.ProductPage_Products_card_conatiner {
+  width: 50%;
+  border: 1px solid red;
+  padding: 10px;
+}
+
+.ProductPage_extra_elements_container {
+  width: 20%;
+  border: 1px solid red;
+}
+
+/* realted categories */
+
+.RelatedCategories_container {
+  border-radius: 10px;
+  border: solid 1px#eee;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 200px;
+  padding: 20px;
+}
+
+.RelatedCategories_container h2 {
+  font-weight: 500;
+  color: #111;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: -0.2px;
+}
+
+.RelatedCategories_list_Box {
+  margin-top: 5px;
+}
+
+.RelatedCategories_list_Box p {
+  line-height: 1.2;
+  color: #777;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
