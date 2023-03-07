@@ -9,14 +9,23 @@ import mcategoriesIcon1 from "../../../public/categories-images/mobile/steel-pip
 import more from "../../../public/categories-images/mobile/more.png";
 import dashboardICon from "../../../public/dashboard.png";
 import NavSearch from "../NavSearch";
+import { useContext } from "react";
+import { MyContext } from "../../../ContaxtApi/ContextApi";
 
 export default function MNavBar() {
+  const { isOpen, setisOpen } = useContext(MyContext);
+
+  // open mobile menu Drawer
+  const handelDrawerOpen = () => {
+    setisOpen(true);
+  };
+
   return (
     <>
       <div>
         <div className={style.mobile_top_navBar}>
           <div className={style.mobile_topNav_left}>
-            <div className={style.mobile_burger}>
+            <div className={style.mobile_burger} onClick={handelDrawerOpen}>
               <Image src={burger} width={25} alt="mobile-burger" />
             </div>
             <div className={style.mobile_logo}>

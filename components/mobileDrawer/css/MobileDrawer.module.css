@@ -1,0 +1,54 @@
+.MobileDrawer_container {
+  display: none;
+  transition-property: display;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+}
+
+@media screen and (max-width: 480px) {
+  .MobileDrawer_container {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 10;
+    transition-property: display;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+  }
+
+  .MobileDrawer_content_part {
+    width: 60%;
+    border: 1px solid #eee;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+  }
+  .MobileDrawer_transpratnt_part {
+    width: 40%;
+    background: transparent;
+    cursor: pointer;
+  }
+  .MobileDrawer_container_hide {
+    display: none;
+    transition-property: display;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+  }
+
+  .MobileDrawer_warper_show {
+    display: block;
+    transition-property: display;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+  }
+
+  .MobileDrawer_warper_hide {
+    display: none;
+  }
+}
