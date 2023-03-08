@@ -4,6 +4,7 @@ import Image from "next/image";
 import product1 from "../../public/Products-images/hydraulic-fixtures.jpg";
 import verifiedImage from "../../public/Products-images/verified_2x.gif";
 import callIcon from "../../public/Products-images/viber.png";
+import Link from "next/link";
 
 const productDetalsList = [
   {
@@ -13,6 +14,7 @@ const productDetalsList = [
     price: 10000,
     company: "Daksh Tooling system",
     city: "gurgaon",
+    slug: "Hydrulic-vum-fixture",
   },
 
   {
@@ -22,11 +24,12 @@ const productDetalsList = [
     price: 10000,
     company: "Daksh Tooling system",
     city: "gurgaon",
+    slug: "Hydrulic-vum-fixture",
   },
 ];
 
 const renderProductCard = () => {
-  return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((el, i) => {
+  return productDetalsList.map((el, i) => {
     return (
       <>
         <div className={style.ProductCards_container}>
@@ -54,7 +57,9 @@ const renderProductCard = () => {
               <span>
                 <Image src={callIcon} alt="call-icon" width={20} />
               </span>{" "}
-              <span>Contact Supplier</span>
+              <Link href={`${el.slug}`}>
+                <span>Contact Supplier</span>
+              </Link>
             </div>
           </div>
           <div className={style.ProductCards_supplyer_detailsBox}>

@@ -1,0 +1,10 @@
+.Breadcrumb_conatiner {
+  width: 100%;
+  height: 50px;
+  padding-left: 100px;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #eee;
+}

@@ -1,0 +1,138 @@
+.SingleProductComponent_container {
+  display: flex;
+  padding: 50px 30px;
+  /* border: 1px solid red; */
+}
+
+.SingleProductComponent_ImageBox {
+  width: 30%;
+  height: 300px;
+  display: flex;
+}
+
+.SingleProductComponent_image_gallery_box {
+  width: 20%;
+  padding: 7px;
+}
+
+.SingleProductComponent_image_gallery_children {
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  height: 70px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.SingleProductComponent_feature_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  border: 1px solid #eee;
+  width: 75%;
+  cursor: pointer;
+}
+
+.SingleProductComponent_feature_ImageBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SingleProductComponent_detail_container {
+  width: 40%;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.SingleProductComponent_product_title {
+  width: 100%;
+  font-size: 20px;
+  padding: 5px 0px;
+}
+
+.SingleProductComponent_brand_box {
+  display: flex;
+  margin: 10px 0px;
+}
+
+.SingleProductComponent_brand_box h3 {
+  padding: 0px 15px 0px 0px;
+  font-weight: 500;
+}
+
+.SingleProductComponent_priceBox {
+  display: flex;
+  font-size: 28px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.SingleProductComponent_sort_descreptionBox h3 {
+  font-weight: 500;
+  margin: 5px 0px;
+}
+
+.SingleProductComponent_sort_descreptionBox {
+  padding: 0px 0px 0px 0px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.SingleProductComponent_sendEnquery_box {
+  border: 1px solid #fb641b;
+  display: inline;
+  margin: 30px 0px;
+  padding: 10px;
+  background: #fb641b;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.SingleProductComponent_supplier_detailsBox {
+  width: 30%;
+  border: 1px solid #eee;
+  box-shadow: var(shadow);
+  padding: 20px;
+}
+
+.SingleProductComponent_supplier_detailsBox h3 {
+  font-weight: 500;
+}
+
+.SingleProductComponent_company_name {
+  display: inline-block;
+  padding: 5px 0px;
+  border-bottom: 3px solid #fb641b;
+  margin-bottom: 10px;
+}
+
+.SingleProductComponent_company_infoBox {
+  display: flex;
+}
+
+.SingleProductComponent_company_logoBox {
+  border: 1px solid #eee;
+}
+
+.SingleProductComponent_company_info {
+  width: 90%;
+  background-color: #eee;
+}
+.SingleProductComponent_company_locationBox {
+  display: flex;
+}
+
+.SingleProductComponent_locationIconBox {
+  margin: 5px;
+}
+
+.SingleProductComponent_company_address p {
+  font-weight: 500;
+}

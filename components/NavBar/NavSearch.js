@@ -9,7 +9,7 @@ export default function NavSearch() {
       <div className={style.search_container}>
         <form className={style.search_form}>
           <input
-            type={Text}
+            type="text"
             style={{ width: "100%" }}
             className={style.search_input}
           />
