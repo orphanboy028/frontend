@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar/NavBar";
+import RelatedProductComponent from "../components/RelatedProductComponent/RelatedProductComponent";
 import SingleProductComponent from "../components/SingleProductComponent/SingleProductComponent";
 
 export default function SingleProductPage() {
@@ -8,6 +9,7 @@ export default function SingleProductPage() {
       <div>
         <NavBar />
         <SingleProductComponent />
+        <RelatedProductComponent />
       </div>
     </>
   );
