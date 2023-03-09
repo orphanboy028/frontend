@@ -2,6 +2,7 @@ import React from "react";
 import style from "./css/Categories.module.css";
 import categoriesImae from "../../public/categories-images/Industrial-Supplies.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MainCategoriesPageComponent() {
   // Render Categories List
@@ -11,7 +12,9 @@ export default function MainCategoriesPageComponent() {
         <>
           <div className={style.categgoriesListBox_children}>
             <div className={style.categoriesListBox_children_heading}>
-              <h2>Manufacturing & Processing Machinery</h2>
+              <Link href={"/SubCategories"}>
+                <h2>Manufacturing & Processing Machinery</h2>
+              </Link>
             </div>
             <div className={style.categgoriesListBox_children_list}>
               <ul>
@@ -30,12 +33,6 @@ export default function MainCategoriesPageComponent() {
           </div>
         </>
       );
-    });
-  };
-
-  const renderCategoriesBox = () => {
-    return [1, 2, 3, 4, 5].map((el, i) => {
-      return <>{renderCategoriesList()}</>;
     });
   };
 

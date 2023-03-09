@@ -1,0 +1,104 @@
+.SubCategoriesPageComponent_main_conatiner {
+  margin-top: 50px;
+  padding: 30px;
+  width: 100%;
+  min-height: 400px;
+}
+
+.SubCategoriesPageComponent_container {
+  margin: 50px 0px;
+}
+
+.SubCategories_Helight_container {
+  width: 100%;
+  border: 1px solid #eee;
+  min-height: 100px;
+  background-color: #d8e7e2;
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+}
+
+.SubCategories_nameBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .subCategories_imageBox {
+  border: 1px solid blue;
+} */
+
+.subCategoriesIMage {
+  width: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 480px) {
+  .SubCategoriesPageComponent_main_conatiner {
+    padding: 2px;
+  }
+  .SubCategories_Helight_container {
+    flex-direction: column-reverse;
+    width: 30%;
+    padding: 1px;
+    align-items: center;
+    justify-content: center;
+  }
+  .subCategories_imageBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .subCategoriesIMage {
+    width: 50px;
+    height: 50px;
+  }
+
+  .SubCategories_nameBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .SubCategories_nameBox h2 {
+    font-size: 14px;
+  }
+}
+
+.subCategories_Product_container {
+  display: flex;
+  border: 1px solid #eee;
+  min-height: 300px;
+  padding: 50px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* sub Categories cards */
+
+.SubCategoriesCards_Container {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  margin: 10px 0px;
+}
+
+.SubCategoriesCards_Container:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.SubCategoriesCards_image {
+  width: 100px;
+}
