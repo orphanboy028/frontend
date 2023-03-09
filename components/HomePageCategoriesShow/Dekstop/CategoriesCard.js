@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import style from "../css/CategeoriesCardsBar.module.css";
 import banner1 from "../../../public/categories-images/industrie.jpg";
+import Link from "next/link";
 
 export default function CategoriesCard() {
   const cardList = () => {
@@ -12,7 +13,9 @@ export default function CategoriesCard() {
           <div className={style.categoriesCard_container}>
             <div className={style.CategoriesCard_box}>
               <div className={style.CategoriesCard_title}>
-                <h3>Medical Treatment Services</h3>
+                <Link href={"/Category"}>
+                  <h3>Medical Treatment Services</h3>
+                </Link>
               </div>
               <div className={style.CategoriesCard_inner_box}>
                 <div className={style.CategoriesCard_inner_box_imageBox}>
