@@ -136,3 +136,120 @@
 .SingleProductComponent_company_address p {
   font-weight: 500;
 }
+
+/* Single Product Details */
+
+.SingleProductDetail_Main_container {
+  padding: 50px;
+}
+
+.SingleProductDetail_Container {
+  display: flex;
+  border: 1px solid #eee;
+  padding: 30px;
+  justify-content: space-between;
+}
+
+.SingleProductDetail_DetailBox {
+  width: 50%;
+}
+
+.SingleProductDetail_BoxHeading {
+  display: inline-block;
+  border-bottom: 3px solid #fb641b;
+  padding: 10px 0px;
+}
+
+.SingleProductDetail_ProductDetailsBox {
+  margin-top: 10px;
+}
+
+.SingleProductDetail_ProductDetail_Heading {
+  padding: 10px 0px;
+  font-weight: 700;
+}
+
+.SingleProductDetail_Product_Specification {
+  padding: 20px 0px;
+}
+.SingleProductDetail_enqueryBox {
+  width: 45%;
+  border: 1px solid #eee;
+}
+
+/* SingleProduct EnqueryForm */
+
+.SingleProductEnqueryForm_container {
+  width: 100%;
+  border: 1px solid #fb641b;
+}
+
+.SingleProductEnqueryForm_toEnqueryBox {
+  display: flex;
+}
+
+.SingleProductEnqueryForm_ToBox {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 5px;
+}
+
+.SingleProductEnqueryForm_NameBox {
+  width: 95%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: 1px solid #eee;
+  padding: 5px;
+}
+
+.SingleProductEnqueryForm_product_DetailsBox {
+  display: flex;
+}
+
+.SingleProductEnqueryForm_productIMageBox {
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+.SingleProductEnqueryForm_productNameBox {
+  border: 1px solid #eee;
+  padding: 10px;
+  width: 100%;
+}
+
+.SingleProductEnqueryForm_formBox {
+  margin: 10px;
+  width: 95%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.SingleProductEnqueryForm_form {
+  width: 100%;
+}
+
+.SingleProductEnqueryForm_textArea {
+  width: 100%;
+  height: 150px;
+  border: 2px solid #eee;
+  box-shadow: var(--box-shadow);
+}
+
+.SingleProductEnqueryForm_formBtn {
+  margin: 10px 0px;
+  background-color: #fb641b;
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.SingleProductEnqueryForm_formBtnBox {
+  display: flex;
+  justify-content: flex-end;
+}
