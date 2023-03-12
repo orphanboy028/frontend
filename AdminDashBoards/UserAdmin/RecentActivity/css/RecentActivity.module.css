@@ -1,0 +1,78 @@
+.RecentActivityComponent_main_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.RecentActivityComponent_Result_container {
+  width: 60%;
+  border: 1px solid #eee;
+  box-shadow: var(--box-shadow);
+  min-height: 400px;
+}
+
+.Result_container_Title {
+  border: 1px solid #eee;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.Result_contantBox {
+  padding: 10px;
+}
+
+/* RecentSearch */
+
+.RecentSearch_main_container {
+  border: 1px solid #eee;
+  min-height: 300px;
+}
+
+.RecentSearch_detailBoxHeader {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.RecentSearch_header_design {
+  background-color: #eee;
+  height: 50px;
+  margin-top: 0px;
+}
+
+.RecentSearch_date {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RecentSearch_device {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.RecentSearch_search_product {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.RecentSearch_searchBtn {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.RecentSearch_searchIconBox {
+  border: 1px solid blue;
+  padding: 5px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(84, 84, 222);
+  border-radius: 5px;
+}

@@ -1,0 +1,95 @@
+.UserAdminLayOut_main_container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+}
+
+.UserAdminLayOut_featureSideBar {
+  width: 100px;
+}
+
+/* Left side bar options */
+
+.LeftOptionBar_Container {
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.LeftOptionBar_options_Box {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.LeftOptionBar_options_Box:hover {
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+.LeftOptionBar_nameBox {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.UserAdminLayOut_Center_container {
+  width: 100%;
+  border: 1px solid red;
+}
+
+.UserAdminLayOut_children_Componet_container {
+  padding: 20px;
+}
+.UserDashBoardNavBar_navContainer {
+  border: 1px solid var(--pramery-color);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--pramery-color);
+  box-shadow: var(--box-shadow);
+}
+
+.UserDashBoardNavBar_brandLogoBox {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.UserDashBoardNavBar_serachbarBox {
+  border: 1px solid #fff;
+  width: 50%;
+  display: flex;
+}
+
+.UserDashBoardNavBar_searchInputBox {
+  width: 90%;
+  border: 1px solid #fff;
+}
+
+.UserDashBoardNavBar_searchInputBox input {
+  width: 100%;
+  border: none;
+}
+
+.UserDashBoardNavBar_searchBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 10%;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #fff;
+}
