@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 import style from "./css/SingUp.module.css";
 import Steper from "./Steper";
@@ -136,6 +137,12 @@ export default function SingUp() {
 
               <div>{renderButton()}</div>
             </form>
+          </div>
+          <div className={style.authForm_footer}>
+            <span>You already have an account please </span>{" "}
+            <Link href={"/login"}>
+              <span className={style.authForm_page_link}>sing In</span>{" "}
+            </Link>
           </div>
         </div>
         {/* form box end */}

@@ -24,6 +24,39 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.authForm_footer {
+  margin: 20px 0px 10px 0px;
+}
+
+.login_page_link {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+.social_media_loginBox {
+  margin: 20px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialMedia_LinkBox {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.social_link_image {
+  margin: 7px;
+}
+
+.authForm_page_link {
+  color: rgb(74, 74, 243);
+}
+
 .formSteps_Box {
   padding: 40px;
   text-align: center;
