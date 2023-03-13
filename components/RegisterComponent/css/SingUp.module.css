@@ -162,3 +162,12 @@
   text-align: center;
   cursor: pointer;
 }
+
+.input_ErrorBox {
+  margin: 3px 0px;
+  padding: 1px 0px;
+}
+
+.input_Error {
+  color: #e64545;
+}
