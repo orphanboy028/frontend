@@ -5,10 +5,22 @@ import googlePic from "../../public/google.png";
 import LinkidinPic from "../../public/linkedin.png";
 import facebookPic from "../../public/facebook.png";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { loginAccount } from "../../Actions/auth";
 
 export default function Login() {
-  const handelSubmit = () => {
-    // form submit
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    mode: "all",
+  });
+
+  const onSubmit = (data) => {
+    const jsonData = JSON.stringify(data);
+    loginAccount(data);
   };
   return (
     <>
@@ -22,7 +34,10 @@ export default function Login() {
 
             {/* form start */}
             <div className={style.form_Box}>
-              <form className={style.SingUp_form}>
+              <form
+                className={style.SingUp_form}
+                onSubmit={handleSubmit(onSubmit)}
+              >
                 <div>
                   <div className={style.form_input_Filed_Box}>
                     <div className={style.form_lableBox}>
@@ -31,8 +46,19 @@ export default function Login() {
                     <div className={style.form_inputBox}>
                       <input
                         type="text"
-                        placeholder="Enter Your Register Email"
+                        id="email"
+                        name="email"
+                        aria-describedby="emailHelp"
+                        placeholder="Enter your Email"
+                        {...register("email", {
+                          required: "valaid Email is Required",
+                        })}
                       />
+                    </div>
+                    <div className={style.input_ErrorBox}>
+                      <small id="emailHelp" className={style.input_Error}>
+                        {errors.email && <p>{errors.email.message}</p>}
+                      </small>
                     </div>
                   </div>
 
@@ -44,6 +70,12 @@ export default function Login() {
                       <input
                         type="text"
                         placeholder="Paaword(8-20 characters)"
+                        id="password"
+                        name="password"
+                        aria-describedby="passwordHelp"
+                        {...register("password", {
+                          required: "password is required",
+                        })}
                       />
                     </div>
                   </div>
@@ -51,11 +83,8 @@ export default function Login() {
 
                 <div>
                   {" "}
-                  <div
-                    className={style.form_btn_full_width_Box}
-                    onClick={handelSubmit}
-                  >
-                    Login
+                  <div className={style.form_btn_full_width_Box}>
+                    <button> Login </button>
                   </div>
                 </div>
               </form>
