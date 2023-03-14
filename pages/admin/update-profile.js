@@ -1,13 +1,13 @@
 import React from "react";
 import Private from "../../AdminDashBoards/UserAdmin/Private";
-import RecentActivityComponent from "../../AdminDashBoards/UserAdmin/RecentActivity/RecentActivity";
+import UpdateProfileComponent from "../../AdminDashBoards/UserAdmin/userProfile/UpdateProfileComponent";
 
-export default function RecentActivity() {
+export default function UpdateProfile() {
   return (
     <>
       <Private>
         <div>
-          <RecentActivityComponent />
+          <UpdateProfileComponent />
         </div>
       </Private>
     </>

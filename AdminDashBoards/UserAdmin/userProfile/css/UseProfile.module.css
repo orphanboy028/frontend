@@ -1,0 +1,131 @@
+.UserProfile_man_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.UserProfile_result_container {
+  width: 60%;
+  border: 1px solid #eee;
+  box-shadow: var(--box-shadow);
+  min-height: 400px;
+  padding: 10px;
+}
+
+.UserProfile_heading_box {
+  background-color: #eee;
+  padding: 5px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.UserProfile_info_container {
+  border: 1px solid red;
+  min-height: 600px;
+}
+
+.UserProfile_basic_info {
+  display: flex;
+  padding: 15px 5px 5px 5px;
+}
+
+.UserProfile_company_logo {
+  width: 30%;
+  display: flex;
+  justify-content: end;
+  height: 50px;
+  padding-right: 10px;
+}
+
+.UserProfile_info {
+  min-width: 50%;
+  padding: 0px 10px;
+  font-weight: 500;
+}
+
+.UserProfile_edit_iconBox {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.UserProfile_edit_box {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Update profile  */
+
+.UpdateProfileComponent_main_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.UpdateProfileComponent_result_container {
+  width: 60%;
+  border: 1px solid #eee;
+  box-shadow: var(--box-shadow);
+  min-height: 400px;
+  padding: 10px;
+}
+
+.UpdateProfileComponent_Personal_info {
+  border: 1px solid #eee;
+  min-height: 400px;
+}
+
+.UpdateProfileComponent_headingBox {
+  border: 1px solid #eee;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.UpdateProfileComponent_infoContainer {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+}
+
+.UpdateProfileComponent_info_inputBox {
+  width: 60%;
+}
+
+.UpdateProfileComponent_name_inputBox {
+  display: flex;
+  margin: 10px 0px;
+}
+
+.UpdateProfileComponent_filed_label {
+  width: 40%;
+  font-weight: 500;
+}
+
+.UpdateProfileComponent_filed_input input {
+  height: 30px;
+}
+
+.UpdateProfileComponent_image_Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 30%;
+}
+
+.UpdateProfileComponent_saveBtnBox {
+  display: flex;
+  justify-content: end;
+  padding: 10px 50px;
+}
+
+.UpdateProfileComponent_saveBtnBox button {
+  background-color: #eee;
+  padding: 5px 20px;
+  border-radius: 8px;
+}

@@ -27,7 +27,7 @@ export default function Login() {
       const { data } = result;
       // console.log(data.user);
       authenticate(data, () => {
-        Router.push("/");
+        Router.push("/admin");
       });
     } catch (error) {
       console.log(error);
