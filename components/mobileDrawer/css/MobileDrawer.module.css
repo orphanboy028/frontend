@@ -86,6 +86,38 @@
     padding: 2px;
     width: 60%;
   }
+
+  .MobileDrawer_authLogin {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .MobileDrawer_authLogin button {
+    padding: 3px 15px;
+    background-color: blue;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .MobileDrawer_logOut {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .MobileDrawer_logOutBtn {
+    padding: 3px 10px;
+    height: 30px;
+    color: #fff;
+    background-color: #fb641b;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
   .MobileDrawer_edit_container {
     width: 10%;
     display: flex;

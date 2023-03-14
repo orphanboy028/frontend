@@ -7,6 +7,8 @@ import userAvtar from "../../public/user-avatar.png";
 import EditIcon from "../../public/edit.png";
 import homeIcon from "../../public/Mobile-Drawer-menu-Icons/home.png";
 import Link from "next/link";
+import { isAuth, singOut } from "../../Actions/auth";
+import Router from "next/router";
 
 const menuName = [
   {
@@ -91,8 +93,21 @@ export default function MobileDrawer() {
 
             <div className={style.MobileDrawer_userNumber_container}>
               {" "}
-              <h3>Hii Pawan Chauhan </h3>
-              <p>+91 9310574918 </p>
+              {isAuth() && (
+                <>
+                  <h3>{isAuth().name}</h3>
+                  <p>{isAuth().mobileNumber} </p>
+                </>
+              )}
+              {!isAuth() && (
+                <>
+                  <div className={style.MobileDrawer_authLogin}>
+                    <button>
+                      <Link href={"/login"}>Login</Link>
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
             <div className={style.MobileDrawer_edit_container}>
               <Image src={EditIcon} alt="edit-icon" width={20} height={20} />
@@ -107,6 +122,23 @@ export default function MobileDrawer() {
             {/* Menu Box End */}
           </div>
           {/* Mobile Drawer Menu List End */}
+
+          {isAuth() && (
+            <>
+              <div className={style.MobileDrawer_logOut}>
+                <div
+                  className={style.MobileDrawer_logOutBtn}
+                  onClick={() => {
+                    singOut(() => {
+                      Router.replace("/login");
+                    });
+                  }}
+                >
+                  Log Out
+                </div>
+              </div>
+            </>
+          )}
         </div>
 
         <div

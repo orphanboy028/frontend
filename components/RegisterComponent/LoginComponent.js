@@ -6,7 +6,8 @@ import LinkidinPic from "../../public/linkedin.png";
 import facebookPic from "../../public/facebook.png";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { loginAccount } from "../../Actions/auth";
+import { loginAccount, authenticate } from "../../Actions/auth";
+import Router from "next/router";
 
 export default function Login() {
   const {
@@ -18,9 +19,19 @@ export default function Login() {
     mode: "all",
   });
 
-  const onSubmit = (data) => {
-    const jsonData = JSON.stringify(data);
-    loginAccount(data);
+  const onSubmit = async (formdata) => {
+    try {
+      const jsonData = JSON.stringify(formdata);
+      const result = await loginAccount(formdata);
+
+      const { data } = result;
+      // console.log(data.user);
+      authenticate(data, () => {
+        Router.push("/");
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <>
