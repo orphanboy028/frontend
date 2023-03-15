@@ -114,6 +114,7 @@
   align-items: center;
   height: 100px;
   width: 30%;
+  flex-direction: column;
 }
 
 .UpdateProfileComponent_saveBtnBox {

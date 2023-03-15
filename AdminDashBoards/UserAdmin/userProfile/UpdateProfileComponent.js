@@ -1,4 +1,4 @@
-import React, { use, useEffect } from "react";
+import React, { use, useEffect, useState } from "react";
 import UserAdminLayOut from "../UserAdminLayOut";
 import style from "./css/UseProfile.module.css";
 import logo from "../../../public/logo.png";
@@ -9,14 +9,17 @@ import { useContext } from "react";
 import { UserContext } from "../../../ContaxtApi/UserContaxApi";
 import { updateProfile } from "../.././../Actions/userAction";
 import { getCookies } from "../../../Actions/auth";
+import axios from "axios";
 
 export default function UpdateProfileComponent() {
   const token = getCookies();
   const { user, setuser, getUserDetails } = useContext(UserContext);
+  const [file, setfile] = useState("");
+  const [imageUpdated, setimageUpdated] = useState(true);
 
   useEffect(() => {
     getUserDetails(token);
-  }, []);
+  }, [imageUpdated]);
 
   const handelChange = (event) => {
     setuser({
@@ -32,6 +35,31 @@ export default function UpdateProfileComponent() {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handelImageChange = (event) => {
+    console.log(event.target.files[0]);
+    setfile(event.target.files[0]);
+  };
+
+  const handelupdateImage = async () => {
+    const formData = new FormData();
+    formData.append("photo", file);
+
+    try {
+      const res = await axios.patch(
+        "http://127.0.0.1:5000/api/v1/user/update-logo",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setimageUpdated(!imageUpdated);
+    } catch (error) {}
   };
 
   return (
@@ -77,7 +105,28 @@ export default function UpdateProfileComponent() {
                 {/* Input filed End */}
 
                 <div className={style.UpdateProfileComponent_image_Container}>
-                  <Image src={logo} alt="company Logo" width={100} />
+                  <div>
+                    <Image
+                      src={`/company-logos/${user.photo}`}
+                      alt="company Logo"
+                      width={100}
+                      height={100}
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="file"
+                      name="photo"
+                      onChange={(event) => handelImageChange(event)}
+                    />
+                    <div
+                      style={{ cursor: "pointer" }}
+                      onClick={handelupdateImage}
+                    >
+                      Update
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className={style.UpdateProfileComponent_saveBtnBox}>
