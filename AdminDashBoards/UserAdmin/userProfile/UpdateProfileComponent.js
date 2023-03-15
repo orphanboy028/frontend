@@ -1,12 +1,39 @@
-import React from "react";
+import React, { use, useEffect } from "react";
 import UserAdminLayOut from "../UserAdminLayOut";
 import style from "./css/UseProfile.module.css";
 import logo from "../../../public/logo.png";
 import edit from "../../../public/edit.png";
 import Link from "next/link";
 import Image from "next/image";
+import { useContext } from "react";
+import { UserContext } from "../../../ContaxtApi/UserContaxApi";
+import { updateProfile } from "../.././../Actions/userAction";
+import { getCookies } from "../../../Actions/auth";
 
 export default function UpdateProfileComponent() {
+  const token = getCookies();
+  const { user, setuser, getUserDetails } = useContext(UserContext);
+
+  useEffect(() => {
+    getUserDetails(token);
+  }, []);
+
+  const handelChange = (event) => {
+    setuser({
+      ...user,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handelSubmit = async () => {
+    try {
+      const result = await updateProfile(token, user);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <UserAdminLayOut>
@@ -24,7 +51,12 @@ export default function UpdateProfileComponent() {
                       Name
                     </div>
                     <div className={style.UpdateProfileComponent_filed_input}>
-                      <input type={"text"} value="Pawan Chauhan" />
+                      <input
+                        type={"text"}
+                        value={user.name}
+                        name="name"
+                        onChange={(e) => handelChange(e)}
+                      />
                     </div>
                   </div>
 
@@ -45,7 +77,7 @@ export default function UpdateProfileComponent() {
               </div>
             </div>
             <div className={style.UpdateProfileComponent_saveBtnBox}>
-              <button>Save</button>
+              <button onClick={handelSubmit}>Save</button>
             </div>
           </div>
           <div className={style.UpdateProfileComponent_state_container}>

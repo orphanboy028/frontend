@@ -5,31 +5,17 @@ import style from "./css/UseProfile.module.css";
 import logo from "../../../public/logo.png";
 import edit from "../../../public/edit.png";
 import Link from "next/link";
-import { getUser } from "../../../Actions/userAction";
 import { getCookies } from "../../../Actions/auth";
+import { useContext } from "react";
+import { UserContext } from "../../../ContaxtApi/UserContaxApi";
 
 export default function UserProfile() {
   const token = getCookies();
-  const [user, setuser] = useState({
-    name: "",
-    mobileNumber: "",
-    email: "",
-  });
+  const { user, setuser, getUserDetails } = useContext(UserContext);
 
   useEffect(() => {
-    console.log("page loaded");
-    getUserDetails();
-  });
-
-  const getUserDetails = async () => {
-    try {
-      const result = await getUser(token);
-      console.log(result.data.me);
-      setuser(result.data.me);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    getUserDetails(token);
+  }, [user]);
 
   return (
     <>
