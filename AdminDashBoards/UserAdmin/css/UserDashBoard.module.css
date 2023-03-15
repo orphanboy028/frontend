@@ -1,7 +1,6 @@
 .UserAdminLayOut_main_container {
   width: 100vw;
-  height: 100vh;
-
+  min-height: 100vh;
   display: flex;
 }
 
@@ -44,7 +43,6 @@
 
 .UserAdminLayOut_Center_container {
   width: 100%;
-  border: 1px solid red;
 }
 
 .UserAdminLayOut_children_Componet_container {

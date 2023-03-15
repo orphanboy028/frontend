@@ -65,7 +65,12 @@ export default function UpdateProfileComponent() {
                       Designation
                     </div>
                     <div className={style.UpdateProfileComponent_filed_input}>
-                      <input type={"text"} value="MARKETING HEAD" />
+                      <input
+                        type={"text"}
+                        value={user.Designation}
+                        name="Designation"
+                        onChange={(e) => handelChange(e)}
+                      />
                     </div>
                   </div>
                 </div>
@@ -75,9 +80,121 @@ export default function UpdateProfileComponent() {
                   <Image src={logo} alt="company Logo" width={100} />
                 </div>
               </div>
+              <div className={style.UpdateProfileComponent_saveBtnBox}>
+                <button onClick={handelSubmit}>Save</button>
+              </div>
             </div>
-            <div className={style.UpdateProfileComponent_saveBtnBox}>
-              <button onClick={handelSubmit}>Save</button>
+
+            <div className={style.updateProfile_contact_info}>
+              <div className={style.UpdateProfileComponent_headingBox}>
+                <h2>Contact Information</h2>
+              </div>
+              <div
+                className={`${style.UserProfile_MobileNumberBox} ${style.boxpading}`}
+              >
+                <div className={style.mobileNumber_lable}>
+                  <h2>Mobile Number</h2>
+                </div>
+                <div className={style.mobileNumberBox}>
+                  <input
+                    type={"text"}
+                    value={user.mobileNumber}
+                    name="mobileNumber"
+                    onChange={(e) => handelChange(e)}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={`${style.UserProfile_MobileNumberBox} ${style.boxpading}`}
+              >
+                <div className={style.mobileNumber_lable}>
+                  <h2>Primary Email :</h2>
+                </div>
+                <div className={style.mobileNumberBox}>
+                  <input
+                    type={"text"}
+                    value={user.email}
+                    name="email"
+                    onChange={(e) => handelChange(e)}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={`${style.UserProfile_MobileNumberBox} ${style.boxpading}`}
+              >
+                <div className={style.mobileNumber_lable}>
+                  <h2>Address :</h2>
+                </div>
+                <div className={style.mobileNumberBox}>
+                  <input
+                    type={"text"}
+                    value={user.Address}
+                    name="Address"
+                    onChange={(e) => handelChange(e)}
+                  />
+                </div>
+              </div>
+              <div className={style.UpdateProfileComponent_saveBtnBox}>
+                <button onClick={handelSubmit}>Save</button>
+              </div>
+            </div>
+
+            <div className={style.updateProfile_contact_info}>
+              <div className={style.UpdateProfileComponent_headingBox}>
+                <h2>Company Information</h2>
+              </div>
+              <div
+                className={`${style.UserProfile_MobileNumberBox} ${style.boxpading}`}
+              >
+                <div className={style.mobileNumber_lable}>
+                  <h2>Company Name</h2>
+                </div>
+                <div className={style.mobileNumberBox}>
+                  <input
+                    type={"text"}
+                    value={user.CompanyName}
+                    name="CompanyName"
+                    onChange={(e) => handelChange(e)}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={`${style.UserProfile_MobileNumberBox} ${style.boxpading}`}
+              >
+                <div className={style.mobileNumber_lable}>
+                  <h2>GSTIN :</h2>
+                </div>
+                <div className={style.mobileNumberBox}>
+                  <input
+                    type={"text"}
+                    value={user.GstNumber}
+                    name="GstNumber"
+                    onChange={(e) => handelChange(e)}
+                  />
+                </div>
+              </div>
+
+              <div
+                className={`${style.UserProfile_MobileNumberBox} ${style.boxpading}`}
+              >
+                <div className={style.mobileNumber_lable}>
+                  <h2>PAN</h2>
+                </div>
+                <div className={style.mobileNumberBox}>
+                  <input
+                    type={"text"}
+                    value={user.PanNumber}
+                    name="PanNumber"
+                    onChange={(e) => handelChange(e)}
+                  />
+                </div>
+              </div>
+              <div className={style.UpdateProfileComponent_saveBtnBox}>
+                <button onClick={handelSubmit}>Save</button>
+              </div>
             </div>
           </div>
           <div className={style.UpdateProfileComponent_state_container}>

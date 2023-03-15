@@ -19,7 +19,6 @@
 }
 
 .UserProfile_info_container {
-  border: 1px solid red;
   min-height: 600px;
 }
 
@@ -49,7 +48,6 @@
 }
 
 .UserProfile_edit_box {
-  background-color: blue;
   width: 50px;
   height: 50px;
   display: flex;
@@ -77,18 +75,18 @@
 
 .UpdateProfileComponent_Personal_info {
   border: 1px solid #eee;
-  min-height: 400px;
+  min-height: 100px;
+  margin: 10px 0px;
 }
 
 .UpdateProfileComponent_headingBox {
-  border: 1px solid #eee;
   padding: 10px;
   font-weight: 500;
 }
 
 .UpdateProfileComponent_infoContainer {
   display: flex;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   width: 100%;
 }
 
@@ -114,7 +112,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 100px;
   width: 30%;
 }
 
@@ -128,4 +126,47 @@
   background-color: #eee;
   padding: 5px 20px;
   border-radius: 8px;
+}
+
+.UserProfile_contact_informationBox {
+  padding: 50px;
+}
+
+.UserProfile_section_TitleBox {
+  margin-bottom: 10px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+
+.UserProfile_edit_iconBox {
+  cursor: pointer;
+}
+
+.UserProfile_MobileNumberBox {
+  display: flex;
+  margin: 10px 0px;
+}
+
+.UserProfile_MobileNumberBox input {
+  min-width: 60%;
+}
+
+.mobileNumber_lable {
+  width: 30%;
+  font-weight: 500;
+}
+
+.mobileNumberBox {
+  width: 60%;
+}
+
+.updateProfile_contact_info {
+  border: 1px solid #eee;
+  min-height: 100px;
+  margin: 10px 0px;
+}
+
+.boxpading {
+  padding: 10px;
 }
