@@ -15,7 +15,7 @@ export default function UserProfile() {
 
   useEffect(() => {
     getUserDetails(token);
-  }, [user]);
+  }, []);
 
   return (
     <>
