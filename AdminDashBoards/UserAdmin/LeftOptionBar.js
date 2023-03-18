@@ -28,6 +28,17 @@ export default function LeftOptionBar() {
             </Link>
           </div>
         </div>
+
+        <div className={style.LeftOptionBar_options_Box}>
+          <div className={style.LeftOptionBar_imageBox}>
+            <Image src={mostrecent} alt="dimaond-icon" width={20} />{" "}
+          </div>
+          <div className={style.LeftOptionBar_nameBox}>
+            <Link href={"/admin/categoies-search"}>
+              <p>Categorires search</p>
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,40 @@
+.Cate_Search_main_container {
+  border: 1px solid red;
+  height: 500px;
+}
+
+.Cate_Search_SearchBox {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Cate_search_inputBox {
+  width: 30%;
+}
+
+.Cate_search_inputBox input {
+  width: 100%;
+}
+
+.cate_search_btnBox {
+  background-color: blue;
+  height: 40px;
+  cursor: pointer;
+}
+
+.search_result_Container {
+  border: 2px solid #eefeee;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.search_results_box {
+  width: 30%;
+  border: 1px solid red;
+  min-height: 100px;
+  display: flex;
+  padding: 10px;
+}

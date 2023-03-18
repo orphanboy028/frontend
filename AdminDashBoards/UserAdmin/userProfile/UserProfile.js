@@ -30,7 +30,7 @@ export default function UserProfile() {
               <div className={style.UserProfile_basic_info}>
                 <div className={style.UserProfile_company_logo}>
                   <Image
-                    src={`/company-logos/${user.photo}`}
+                    src={`/company-logos/${user?.photo}`}
                     alt="company Logo"
                     width={50}
                     height={50}
@@ -38,7 +38,7 @@ export default function UserProfile() {
                 </div>
                 <div className={style.UserProfile_info}>
                   <div>
-                    <span>{user.name} </span> <span>- Marketng Head</span>
+                    <span>{user?.name} </span> <span>- Marketng Head</span>
                   </div>
                   <div>
                     <span>Gurugram, </span> <span>Haryana </span>{" "}
