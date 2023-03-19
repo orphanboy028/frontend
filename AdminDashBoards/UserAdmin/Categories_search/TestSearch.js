@@ -5,53 +5,56 @@ import style from "./css/CategoriesSearch.module.css";
 import { CategoriesContext } from "../../../ContaxtApi/categoriesContextApi";
 import { useContext } from "react";
 
-const categories = [
-  {
-    categoryName: "Electronics",
-    subCategory: [
-      {
-        subCategoryName: "Computers",
-        lefCategory: [
-          { lefCategoryName: "laptop" },
-          { lefCategoryName: "Desktops" },
-        ],
-      },
-      {
-        subCategoryName: "TV & Video",
-        lefCategory: [
-          { lefCategoryName: "LED TVs" },
-          { lefCategoryName: "Smart TVs" },
-        ],
-      },
-    ],
-  },
-  {
-    categoryName: "Clothing",
-    subCategory: [
-      {
-        subCategoryName: "Men",
-        lefCategory: [
-          { lefCategoryName: "Shirts" },
-          { lefCategoryName: "Pants" },
-        ],
-      },
-      {
-        subCategoryName: "Women",
-        lefCategory: [
-          { lefCategoryName: "Dresses" },
-          { lefCategoryName: "Skirts" },
-        ],
-      },
-    ],
-  },
-];
+// const categories = [
+//   {
+//     categoryName: "Electronics",
+//     subCategory: [
+//       {
+//         subCategoryName: "Computers",
+//         lefCategory: [
+//           { lefCategoryName: "laptop" },
+//           { lefCategoryName: "Desktops" },
+//         ],
+//       },
+//       {
+//         subCategoryName: "TV & Video",
+//         lefCategory: [
+//           { lefCategoryName: "LED TVs" },
+//           { lefCategoryName: "Smart TVs" },
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     categoryName: "Clothing",
+//     subCategory: [
+//       {
+//         subCategoryName: "Men",
+//         lefCategory: [
+//           { lefCategoryName: "Shirts" },
+//           { lefCategoryName: "Pants" },
+//         ],
+//       },
+//       {
+//         subCategoryName: "Women",
+//         lefCategory: [
+//           { lefCategoryName: "Dresses" },
+//           { lefCategoryName: "Skirts" },
+//         ],
+//       },
+//     ],
+//   },
+// ];
 
 export default function TestSearch() {
   const [leafCategoryz, setLeafCategoryz] = useState("");
   const [categoriesz, setCategoriesz] = useState("");
   const [subcategoriesz, setSubcategoriesz] = useState("");
+  const { categories, getCategories } = useContext(CategoriesContext);
 
-  // console.log(categories);
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   const handleLeafCategoryChange = (event) => {
     const selectedLeafCategory = event.target.value;
