@@ -4,6 +4,9 @@ export const CategoriesContext = createContext();
 
 export const CategoriesContextProvider = ({ children }) => {
   const [categories, setcategories] = useState([]);
+  const [leafCategoryz, setLeafCategoryz] = useState("");
+  const [categoriesz, setCategoriesz] = useState("");
+  const [subcategoriesz, setSubcategoriesz] = useState("");
 
   const getCategories = async () => {
     try {
@@ -19,7 +22,17 @@ export const CategoriesContextProvider = ({ children }) => {
   return (
     <>
       <CategoriesContext.Provider
-        value={{ categories, setcategories, getCategories }}
+        value={{
+          categories,
+          setcategories,
+          leafCategoryz,
+          setLeafCategoryz,
+          categoriesz,
+          setCategoriesz,
+          subcategoriesz,
+          setSubcategoriesz,
+          getCategories,
+        }}
       >
         {children}
       </CategoriesContext.Provider>

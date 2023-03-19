@@ -47,10 +47,16 @@ import { useContext } from "react";
 // ];
 
 export default function TestSearch() {
-  const [leafCategoryz, setLeafCategoryz] = useState("");
-  const [categoriesz, setCategoriesz] = useState("");
-  const [subcategoriesz, setSubcategoriesz] = useState("");
-  const { categories, getCategories } = useContext(CategoriesContext);
+  const {
+    categories,
+    leafCategoryz,
+    setLeafCategoryz,
+    categoriesz,
+    setCategoriesz,
+    subcategoriesz,
+    setSubcategoriesz,
+    getCategories,
+  } = useContext(CategoriesContext);
 
   useEffect(() => {
     getCategories();
