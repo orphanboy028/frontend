@@ -8,15 +8,19 @@ export const CategoriesContextProvider = ({ children }) => {
   const getCategories = async () => {
     try {
       const result = await getAllCategories();
-      console.log(result.data.allCategories);
+
       setcategories(result.data.allCategories);
     } catch (error) {
       console.log(error);
     }
   };
+
+  // console.log(categories);
   return (
     <>
-      <CategoriesContext.Provider value={{ getCategories }}>
+      <CategoriesContext.Provider
+        value={{ categories, setcategories, getCategories }}
+      >
         {children}
       </CategoriesContext.Provider>
     </>

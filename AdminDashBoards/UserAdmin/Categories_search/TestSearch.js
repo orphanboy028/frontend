@@ -1,93 +1,118 @@
 import React, { useEffect, useState } from "react";
 import UserAdminLayOut from "../UserAdminLayOut";
 import { MultiSelect } from "react-multi-select-component";
+import style from "./css/CategoriesSearch.module.css";
+import { CategoriesContext } from "../../../ContaxtApi/categoriesContextApi";
+import { useContext } from "react";
 
 const categories = [
   {
-    name: "Electronics",
-    subcategories: [
+    categoryName: "Electronics",
+    subCategory: [
       {
-        name: "Computers",
-        leafcategories: ["Laptops", "Desktops"],
+        subCategoryName: "Computers",
+        lefCategory: [
+          { lefCategoryName: "laptop" },
+          { lefCategoryName: "Desktops" },
+        ],
       },
       {
-        name: "TV & Video",
-        leafcategories: ["LED TVs", "Smart TVs"],
+        subCategoryName: "TV & Video",
+        lefCategory: [
+          { lefCategoryName: "LED TVs" },
+          { lefCategoryName: "Smart TVs" },
+        ],
       },
     ],
   },
   {
-    name: "Clothing",
-    subcategories: [
+    categoryName: "Clothing",
+    subCategory: [
       {
-        name: "Men",
-        leafcategories: ["Shirts", "Pants"],
+        subCategoryName: "Men",
+        lefCategory: [
+          { lefCategoryName: "Shirts" },
+          { lefCategoryName: "Pants" },
+        ],
       },
       {
-        name: "Women",
-        leafcategories: ["Dresses", "Skirts"],
+        subCategoryName: "Women",
+        lefCategory: [
+          { lefCategoryName: "Dresses" },
+          { lefCategoryName: "Skirts" },
+        ],
       },
     ],
   },
 ];
 
 export default function TestSearch() {
-  const [selectedLeafCategory, setSelectedLeafCategory] = useState("");
-  const [selectedSubcategory, setSelectedSubcategory] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [leafCategoryz, setLeafCategoryz] = useState("");
+  const [categoriesz, setCategoriesz] = useState("");
+  const [subcategoriesz, setSubcategoriesz] = useState("");
+
+  // console.log(categories);
 
   const handleLeafCategoryChange = (event) => {
-    // Get the selected leaf category
     const selectedLeafCategory = event.target.value;
+    setLeafCategoryz(selectedLeafCategory);
 
-    // Find the subcategory and category objects
-    const subcategory = categories
-      .find((category) =>
-        category.subcategories.some((subcategory) =>
-          subcategory.leafcategories.includes(selectedLeafCategory)
-        )
-      )
-      .subcategories.find((subcategory) =>
-        subcategory.leafcategories.includes(selectedLeafCategory)
-      );
+    // method-2
+    categories.forEach((category) => {
+      category.subCategory.forEach((subCategory) => {
+        const foundLefCategory = subCategory.lefCategory.find(
+          (lefCategory) => lefCategory.lefCategoryName === selectedLeafCategory
+        );
+        if (foundLefCategory) {
+          setCategoriesz(category.categoryName);
+          setSubcategoriesz(subCategory.subCategoryName);
+          console.log(`Selected leaf category: ${selectedLeafCategory}`);
+          console.log(`Category: ${category.categoryName}`);
+          console.log(`Subcategory: ${subCategory.subCategoryName}`);
+        }
+      });
+    });
 
-    const category = categories.find((category) =>
-      category.subcategories.includes(subcategory)
-    );
+    // Find the category and subcategory based on the selected leaf category
 
-    // Set the state with the selected values
-    setSelectedLeafCategory(selectedLeafCategory);
-    setSelectedSubcategory(subcategory.name);
-    setSelectedCategory(category.name);
-
-    // Log the results
-    console.log(`Selected category: ${category.name}`);
-    console.log(`Selected subcategory: ${subcategory.name}`);
-    console.log(`Selected leaf category: ${selectedLeafCategory}`);
+    // Set the state for categories and subcategories based on the selected leaf category;
   };
 
   return (
     <div>
       <UserAdminLayOut>
         <div>
+          <label htmlFor="leafCategory">Select a leaf category:</label>
+          <select id="leafCategory" onChange={handleLeafCategoryChange}>
+            <option value="">Select a leaf category</option>
+            {categories.map((category) =>
+              category.subCategory.map((subcategory) =>
+                subcategory.lefCategory.map((leafcategory) => (
+                  <option
+                    key={leafcategory.lefCategoryName}
+                    value={leafcategory.lefCategoryName}
+                  >
+                    {leafcategory.lefCategoryName}
+                  </option>
+                ))
+              )
+            )}
+          </select>
+
+          <br />
+          <br />
           <div>
-            <label htmlFor="leaf-categories-select">Leaf categories:</label>
-            <select
-              id="leaf-categories-select"
-              onChange={handleLeafCategoryChange}
-            >
-              <option value="">Select a leaf category</option>
-              {categories.map((category) =>
-                category.subcategories.map((subcategory) =>
-                  subcategory.leafcategories.map((leafcategory) => (
-                    <option value={leafcategory} key={leafcategory}>
-                      {leafcategory} ({subcategory.name}, {category.name})
-                    </option>
-                  ))
-                )
-              )}
-            </select>
+            <label htmlFor="categories">Categories:</label>
+
+            <div>{categoriesz}</div>
           </div>
+          <div>
+            <label htmlFor="subcategories">Subcategories:</label>
+
+            <div key={subcategoriesz}>{subcategoriesz}</div>
+          </div>
+
+          <div className={style.form_container}>Form Part</div>
         </div>
       </UserAdminLayOut>
     </div>
