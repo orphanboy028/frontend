@@ -4,6 +4,7 @@ import { MultiSelect } from "react-multi-select-component";
 import style from "./css/CategoriesSearch.module.css";
 import { CategoriesContext } from "../../../ContaxtApi/categoriesContextApi";
 import { useContext } from "react";
+import ProductImageUplode from "./ProductImageUplode";
 
 // const categories = [
 //   {
@@ -46,6 +47,31 @@ import { useContext } from "react";
 //   },
 // ];
 
+const formFields1 = [
+  { label: "First Name", name: "firstName", type: "text" },
+  { label: "Last Name", name: "lastName", type: "text" },
+  { label: "Email", name: "email", type: "email" },
+  { label: "Message", name: "message", type: "textarea" },
+];
+const formFields2 = [
+  { label: "First Name", name: "firstName", type: "text" },
+  { label: "Last Name", name: "lastName", type: "text" },
+  { label: "Email", name: "email", type: "email" },
+  {
+    label: "Gender",
+    name: "gender",
+    type: "radio",
+    options: ["Male", "Female", "Other"],
+  },
+  {
+    label: "Interests",
+    name: "interests",
+    type: "checkbox",
+    label: "Interests",
+  },
+  { label: "Message", name: "message", type: "textarea" },
+];
+
 export default function TestSearch() {
   const {
     categories,
@@ -58,9 +84,91 @@ export default function TestSearch() {
     getCategories,
   } = useContext(CategoriesContext);
 
+  const [formData, setformData] = useState([]);
+
   useEffect(() => {
+    if (leafCategoryz == "Industrial Machinery") {
+      setformData(formFields1);
+    } else if (leafCategoryz == "SPM Machine") {
+      setformData(formFields2);
+    }
+  }, [leafCategoryz]);
+
+  useEffect(() => {
+    setformData(formFields2);
     getCategories();
   }, []);
+
+  const handleInputChange = () => {};
+
+  const renderFormFields = () => {
+    return formData.map((field) => {
+      if (field.type === "textarea") {
+        return (
+          <div>
+            <label key={field.name}>
+              {field.label}
+              <textarea
+                name={field.name}
+                value={formData[field.name] || ""}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
+        );
+      }
+
+      if (field.type === "radio") {
+        return (
+          <div key={field.name}>
+            <p>{field.label}</p>
+            {field.options.map((option) => (
+              <label key={option}>
+                <input
+                  type="radio"
+                  name={field.name}
+                  value={option}
+                  checked={formData[field.name] === option}
+                  onChange={handleInputChange}
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        );
+      }
+
+      if (field.type === "checkbox") {
+        return (
+          <label key={field.name}>
+            <input
+              type="checkbox"
+              name={field.name}
+              checked={formData[field.name] || false}
+              onChange={handleInputChange}
+            />
+            {field.label}
+          </label>
+        );
+      }
+
+      return (
+        <div>
+          <div>
+            <label key={field.name}>{field.label}</label>
+          </div>
+          <div>
+            <input
+              type={field.type}
+              name={field.name}
+              value={formData[field.name] || ""}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+      );
+    });
+  };
 
   const handleLeafCategoryChange = (event) => {
     const selectedLeafCategory = event.target.value;
@@ -75,9 +183,9 @@ export default function TestSearch() {
         if (foundLefCategory) {
           setCategoriesz(category.categoryName);
           setSubcategoriesz(subCategory.subCategoryName);
-          console.log(`Selected leaf category: ${selectedLeafCategory}`);
-          console.log(`Category: ${category.categoryName}`);
-          console.log(`Subcategory: ${subCategory.subCategoryName}`);
+          // console.log(`Selected leaf category: ${selectedLeafCategory}`);
+          // console.log(`Category: ${category.categoryName}`);
+          // console.log(`Subcategory: ${subCategory.subCategoryName}`);
         }
       });
     });
@@ -121,7 +229,16 @@ export default function TestSearch() {
             <div key={subcategoriesz}>{subcategoriesz}</div>
           </div>
 
-          <div className={style.form_container}>Form Part</div>
+          <div>
+            <label htmlFor="Lefcategories">Lefcategories:</label>
+
+            <div key={subcategoriesz}>{leafCategoryz}</div>
+          </div>
+
+          <div className={style.form_container}>
+            {renderFormFields()}
+            <ProductImageUplode />
+          </div>
         </div>
       </UserAdminLayOut>
     </div>
