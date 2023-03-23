@@ -27,7 +27,11 @@ export default function Login() {
       const { data } = result;
       // console.log(data.user);
       authenticate(data, () => {
-        Router.push("/admin");
+        if (data.user.role === "user") {
+          Router.push("/admin");
+        } else if (data.user.role === "admin") {
+          Router.push("/super-admin");
+        }
       });
     } catch (error) {
       console.log(error);

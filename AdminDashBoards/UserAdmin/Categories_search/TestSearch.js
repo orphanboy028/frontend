@@ -4,7 +4,9 @@ import { MultiSelect } from "react-multi-select-component";
 import style from "./css/CategoriesSearch.module.css";
 import { CategoriesContext } from "../../../ContaxtApi/categoriesContextApi";
 import { useContext } from "react";
+import { ProductContext } from "../../../ContaxtApi/ProductContextApi";
 import ProductImageUplode from "./ProductImageUplode";
+import CommanFormInput from "./CommanFormInput";
 
 // const categories = [
 //   {
@@ -46,22 +48,21 @@ import ProductImageUplode from "./ProductImageUplode";
 //     ],
 //   },
 // ];
-
 const formFields1 = [
-  { label: "First Name", name: "firstName", type: "text" },
-  { label: "Last Name", name: "lastName", type: "text" },
-  { label: "Email", name: "email", type: "email" },
-  { label: "Message", name: "message", type: "textarea" },
+  { id: 1, label: "Product Name", name: "name", type: "text" },
+  { id: 2, label: "price", name: "price", type: "text" },
+  { id: 3, label: "description", name: "description", type: "textarea" },
 ];
+
 const formFields2 = [
-  { label: "First Name", name: "firstName", type: "text" },
-  { label: "Last Name", name: "lastName", type: "text" },
-  { label: "Email", name: "email", type: "email" },
+  { label: "Product Name", name: "name", type: "text" },
+  { label: "price", name: "price", type: "text" },
+  { label: "Frequency", name: "Frequency", type: "text" },
   {
-    label: "Gender",
-    name: "gender",
+    label: "Materla",
+    name: "Materla",
     type: "radio",
-    options: ["Male", "Female", "Other"],
+    options: ["PLastic", "matel", "Other"],
   },
   {
     label: "Interests",
@@ -69,7 +70,7 @@ const formFields2 = [
     type: "checkbox",
     label: "Interests",
   },
-  { label: "Message", name: "message", type: "textarea" },
+  { label: "description", name: "description", type: "textarea" },
 ];
 
 export default function TestSearch() {
@@ -84,33 +85,41 @@ export default function TestSearch() {
     getCategories,
   } = useContext(CategoriesContext);
 
-  const [formData, setformData] = useState([]);
+  const { handelSubmit } = useContext(ProductContext);
+
+  // const [formData, setformData] = useState(formFields1);
+
+  // useEffect(() => {
+  //   if (leafCategoryz == "Industrial Machinery") {
+  //     setformData(formFields1);
+  //   } else if (leafCategoryz == "SPM Machine") {
+  //     setformData(formFields2);
+  //   }
+  // }, [leafCategoryz]);
 
   useEffect(() => {
-    if (leafCategoryz == "Industrial Machinery") {
-      setformData(formFields1);
-    } else if (leafCategoryz == "SPM Machine") {
-      setformData(formFields2);
-    }
-  }, [leafCategoryz]);
-
-  useEffect(() => {
-    setformData(formFields2);
+    // setformData(formFields2);
     getCategories();
   }, []);
 
-  const handleInputChange = () => {};
+  const handleInputChange = (e) => {
+    console.log(values);
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const renderFormFields = () => {
     return formData.map((field) => {
       if (field.type === "textarea") {
         return (
-          <div>
+          <div className={style.formBox}>
             <label key={field.name}>
               {field.label}
               <textarea
                 name={field.name}
-                value={formData[field.name] || ""}
+                value={field[values.description]}
                 onChange={handleInputChange}
               />
             </label>
@@ -120,7 +129,7 @@ export default function TestSearch() {
 
       if (field.type === "radio") {
         return (
-          <div key={field.name}>
+          <div key={field.name} className={style.formBox}>
             <p>{field.label}</p>
             {field.options.map((option) => (
               <label key={option}>
@@ -140,20 +149,22 @@ export default function TestSearch() {
 
       if (field.type === "checkbox") {
         return (
-          <label key={field.name}>
-            <input
-              type="checkbox"
-              name={field.name}
-              checked={formData[field.name] || false}
-              onChange={handleInputChange}
-            />
-            {field.label}
-          </label>
+          <div className={style.formBox}>
+            <label key={field.name}>
+              <input
+                type="checkbox"
+                name={field.name}
+                checked={formData[field.name] || false}
+                onChange={handleInputChange}
+              />
+              {field.label}
+            </label>
+          </div>
         );
       }
 
       return (
-        <div>
+        <div className={style.formBox}>
           <div>
             <label key={field.name}>{field.label}</label>
           </div>
@@ -161,7 +172,7 @@ export default function TestSearch() {
             <input
               type={field.type}
               name={field.name}
-              value={formData[field.name] || ""}
+              value={field[values.name]}
               onChange={handleInputChange}
             />
           </div>
@@ -236,7 +247,14 @@ export default function TestSearch() {
           </div>
 
           <div className={style.form_container}>
-            {renderFormFields()}
+            <div className={style.form_inner_container}>
+              {formFields1.map((input) => (
+                <CommanFormInput key={input.id} {...input} />
+              ))}
+            </div>
+            <div style={{ margin: "10px" }}>
+              <button onClick={handelSubmit}>submit</button>
+            </div>
             <ProductImageUplode />
           </div>
         </div>

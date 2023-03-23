@@ -69,7 +69,7 @@ export default function UserProfile() {
                     <h2>Mobile Number</h2>
                   </div>
                   <div className={style.mobileNumberBox}>
-                    <h2>{user.mobileNumber}</h2>
+                    <h2>{user?.mobileNumber}</h2>
                   </div>
                 </div>
 
@@ -78,7 +78,7 @@ export default function UserProfile() {
                     <h2>Primary Email :</h2>
                   </div>
                   <div className={style.mobileNumberBox}>
-                    <h2>{user.email}</h2>
+                    <h2>{user?.email}</h2>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@ export default function UserProfile() {
                   </div>
                   <div className={style.mobileNumberBox}>
                     <h2>
-                      {user.Address ? user.Address : "Update your address"}
+                      {user?.Address ? user?.Address : "Update your address"}
                     </h2>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export default function UserProfile() {
                   </div>
                   <div className={style.mobileNumberBox}>
                     <h2>
-                      {user.CompanyName
+                      {user?.CompanyName
                         ? user.CompanyName
                         : "Update your Company Name"}
                     </h2>
@@ -125,7 +125,7 @@ export default function UserProfile() {
                   </div>
                   <div className={style.mobileNumberBox}>
                     <h2>
-                      {user.GstNumber
+                      {user?.GstNumber
                         ? user.GstNumber
                         : "Update your GST Number"}
                     </h2>
@@ -138,7 +138,7 @@ export default function UserProfile() {
                   </div>
                   <div className={style.mobileNumberBox}>
                     <h2>
-                      {user.PanNumber
+                      {user?.PanNumber
                         ? user.PanNumber
                         : "Update your PAN Number"}
                     </h2>
