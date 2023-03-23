@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use, useEffect } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import style from "./css/SingleProductComponent.module.css";
 import childImage from "../../public/Products-images/hydraulic-fixtures.jpg";
@@ -6,8 +6,20 @@ import Image from "next/image";
 import company_logo from "../../public/company_logo.jpg";
 import placeholder from "../../public/placeholder.png";
 import check from "../../public/check.png";
+import { ProductContext } from "../../ContaxtApi/ProductContextApi";
+import { useContext } from "react";
+import { useRouter } from "next/router";
 
 export default function SingleProductComponent() {
+  const { singleProduct, product } = useContext(ProductContext);
+  const router = useRouter();
+  const { slug } = router.query;
+  const { user } = product;
+
+  useEffect(() => {
+    singleProduct(slug);
+  }, [slug]);
+
   return (
     <div>
       <Breadcrumb />
@@ -43,23 +55,18 @@ export default function SingleProductComponent() {
         </div>
         <div className={style.SingleProductComponent_detail_container}>
           <div className={style.SingleProductComponent_product_title}>
-            <h1> Industrial Pani Puri Making Machine</h1>
+            <h1> {product.name}</h1>
           </div>
           <div className={style.SingleProductComponent_brand_box}>
             <h3>Brand Name </h3>
             <span>P AND P FOOD MACHINES</span>
           </div>
           <div className={style.SingleProductComponent_priceBox}>
-            <span>₹</span> <h3>11,799</h3>
+            <span>₹</span> <h3>{product.price}</h3>
           </div>
           <div className={style.SingleProductComponent_sort_descreptionBox}>
             <h3>Sort Description</h3>
-            <p>
-              Over the years, we are providing the design & development of the
-              hydraulic jigs & fixtures to our customers. We support our
-              customer right from the scratch when they are having only the
-              component and they want to manufacture it.
-            </p>
+            <p>{product.description}</p>
           </div>
           <div className={style.SingleProductComponent_sendEnquery_box}>
             Send Enquery
@@ -67,7 +74,7 @@ export default function SingleProductComponent() {
         </div>
         <div className={style.SingleProductComponent_supplier_detailsBox}>
           <div className={style.SingleProductComponent_company_name}>
-            <h3>Prachi Fixtures Private Limited</h3>
+            <h3>{user.businessDetails.CompanyName}</h3>
           </div>
 
           <div className={style.SingleProductComponent_company_infoBox}>
@@ -89,7 +96,7 @@ export default function SingleProductComponent() {
                   <Image src={check} alt="placeholder" width={20} />
                 </div>
                 <div className={style.SingleProductComponent_company_address}>
-                  <p>GST-27AAHCP6698P1Z9</p>
+                  <p>{user.businessDetails.GstNumber}</p>
                 </div>
               </div>
               {/* Gst info end */}

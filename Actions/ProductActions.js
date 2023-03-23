@@ -50,3 +50,19 @@ export const getUserAllProducts = async (token, _id) => {
     return error.response;
   }
 };
+
+export const getSingleProduct = async (slug) => {
+  try {
+    return await axios.get(
+      `http://127.0.0.1:5000/api/v1/produts/single-product/${slug}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+  } catch (error) {
+    return error.response;
+  }
+};
