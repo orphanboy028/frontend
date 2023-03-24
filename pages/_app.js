@@ -3,6 +3,7 @@ import { MyContextProvider } from "../ContaxtApi/ContextApi";
 import { UserContextProvider } from "../ContaxtApi/UserContaxApi";
 import { CategoriesContextProvider } from "../ContaxtApi/categoriesContextApi";
 import { ProductsContextProvider } from "../ContaxtApi/ProductContextApi";
+import EnquiriyContextProvider from "../ContaxtApi/EnquiriyContexApi";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,7 +11,9 @@ function MyApp({ Component, pageProps }) {
       <UserContextProvider>
         <CategoriesContextProvider>
           <ProductsContextProvider>
-            <Component {...pageProps} />
+            <EnquiriyContextProvider>
+              <Component {...pageProps} />
+            </EnquiriyContextProvider>
           </ProductsContextProvider>
         </CategoriesContextProvider>
       </UserContextProvider>

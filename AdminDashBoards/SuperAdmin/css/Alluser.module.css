@@ -66,3 +66,16 @@
   display: flex;
   justify-content: center;
 }
+
+/* EnquiresComponnt_main_Container */
+.EnquiresComponnt_main_Container {
+  padding: 10px;
+  border: 1px solid red;
+  min-height: 400px;
+}
+
+.EnquiresComponnt_tableBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+}

@@ -7,11 +7,13 @@ import company_logo from "../../public/company_logo.jpg";
 import placeholder from "../../public/placeholder.png";
 import check from "../../public/check.png";
 import { ProductContext } from "../../ContaxtApi/ProductContextApi";
+import { EnqiriyContext } from "../../ContaxtApi/EnquiriyContexApi";
 import { useContext } from "react";
 import { useRouter } from "next/router";
 
 export default function SingleProductComponent() {
   const { singleProduct, product } = useContext(ProductContext);
+  const { enquries, createEnquiry } = useContext(EnqiriyContext);
   const router = useRouter();
   const { slug } = router.query;
   const { user } = product;
@@ -19,6 +21,11 @@ export default function SingleProductComponent() {
   useEffect(() => {
     singleProduct(slug);
   }, [slug]);
+
+  const handelEnquiry = () => {
+    console.log("click");
+    createEnquiry(slug);
+  };
 
   return (
     <div>
@@ -68,13 +75,16 @@ export default function SingleProductComponent() {
             <h3>Sort Description</h3>
             <p>{product.description}</p>
           </div>
-          <div className={style.SingleProductComponent_sendEnquery_box}>
+          <div
+            className={style.SingleProductComponent_sendEnquery_box}
+            onClick={handelEnquiry}
+          >
             Send Enquery
           </div>
         </div>
         <div className={style.SingleProductComponent_supplier_detailsBox}>
           <div className={style.SingleProductComponent_company_name}>
-            <h3>{user.businessDetails.CompanyName}</h3>
+            <h3>{user?.businessDetails.CompanyName}</h3>
           </div>
 
           <div className={style.SingleProductComponent_company_infoBox}>
@@ -96,7 +106,7 @@ export default function SingleProductComponent() {
                   <Image src={check} alt="placeholder" width={20} />
                 </div>
                 <div className={style.SingleProductComponent_company_address}>
-                  <p>{user.businessDetails.GstNumber}</p>
+                  <p>{user?.businessDetails.GstNumber}</p>
                 </div>
               </div>
               {/* Gst info end */}
